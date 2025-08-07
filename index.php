@@ -1,4 +1,5 @@
 <?php include('header.php'); ?>
+<?php include('dbconn.php'); ?>
     <h2>All Records</h2>
     <table class="table table-hover table-bordered table-striped">
     <thead>
@@ -11,18 +12,25 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>John</td>
-            <td>Doe</td>
-            <td>30</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jane</td>
-            <td>Smith</td>
-            <td>25</td>
-        </tr>
+        <?php 
+
+        $query = "SELECT * FROM users";
+
+        $result = mysqli_query($connection, $query);
+
+        if(!$result) {
+            die("Query failed: " . mysqli_error($connection));
+        }else{
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['first_name'] . "</td>";
+                echo "<td>" . $row['last_name'] . "</td>";
+                echo "<td>" . $row['age'] . "</td>";
+                echo "</tr>";
+            }
+        }
+        ?>
     </tbody>
 </table>
 
