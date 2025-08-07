@@ -8,8 +8,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      <div class="modal-body">
-        <form action="" method="POST">
+      <form action="insert_data.php" method="POST">
+        <div class="modal-body">
           <div class="mb-3">
             <label for="first_name" class="form-label">First Name</label>
             <input type="text" class="form-control" placeholder="Enter First Name" name="first_name">
@@ -22,13 +22,13 @@
             <label for="age" class="form-label">Age</label>
             <input type="number" class="form-control" placeholder="Enter Age" name="age">
           </div>
-        </form>
-      </div>
+        </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <input type="submit" class="btn btn-primary" value="Save changes" name="add_record">
-      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" value="Save changes" name="add_record">
+        </div>
+      </form>
 
     </div>
   </div>
