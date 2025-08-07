@@ -1,6 +1,11 @@
 <?php include('header.php'); ?>
 <?php include('dbconn.php'); ?>
-    <h2>All Records</h2>
+<?php include('modal.php'); ?>
+     <div class="box1">
+         <h2>All Records</h2>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new record</button>
+     </div>
+   
     <table class="table table-hover table-bordered table-striped">
     <thead>
         <tr>
